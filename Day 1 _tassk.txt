@@ -1,4 +1,4 @@
-Write a blog on Difference between HTTP1.1 vs HTTP2
+1. Write a blog on Difference between HTTP1.1 vs HTTP2
   HTTP/1.1
   * It works on the textual format.
   * There is head of line blocking that blocks all the requests behind it until it doesn’t get its all resources.
@@ -10,6 +10,15 @@ Write a blog on Difference between HTTP1.1 vs HTTP2
   * It allows multiplexing so one TCP connection is required for multiple requests.
   * it uses PUSH frame by server that collects all multiple pages 
   * It uses HPACK for data compression.
+
+
+  2. Write a blog about objects and its internal representation in Javascript
+
+  Objects, in JavaScript, is it’s most important data-type and forms the building blocks for modern JavaScript. 
+  These objects are quite different from JavaScript’s primitive data-types(Number, String, Boolean, null, undefined 
+  and symbol) in the sense that while these primitive data-types all store a single value each (depending on their types).
+
+
 
 
 
