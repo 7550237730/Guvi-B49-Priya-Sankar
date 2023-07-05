@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Movie Example</title>
+  </head>
+  <body>
+    <script>
+        class Movie {
+  constructor(title, studio, rating = "PG") {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+    if(rating === "")
+    {
+      this.rating = "PG";
+    }
+    else {
+      this.rating = rating;
+    }
+  }
+
+  static getPG(arr) {
+    return arr.filter(movie => movie.rating === "PG");
+  }
+}
+
+let film = new Movie("Casino Royale", "Eon Productions", "");
+let ipArr = [
+  { title: "Movie 1", studio: "Studio 1", rating: "PG" },
+  { title: "Movie 2", studio: "Studio 2", rating: "PG-13" },
+  { title: "Movie 3", studio: "Studio 3", rating: "R" },
+  { title: "Movie 4", studio: "Studio 4", rating: "PG" }
+];
+let pgMovies = Movie.getPG(ipArr);
+console.log(film);
+console.log(pgMovies);
+
+    </script>
+  </body>
+</html>
