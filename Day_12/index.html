@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        border: 4px solid black;
+        margin: 10px;
+    }
+</style>
+<body>
+    <div id =  "Parent"> 
+        Parent divv !!!!!!</div>
+
+
+    <script>
+        const ele = document.createElement("div");
+        ele.setAttribute("id", "maindiv");
+        ele.setAttribute("class", "main");
+        ele.innerText = "Welcome Guvi B49 WD Tamil Batch";
+        
+
+        const ele1 = document.createElement("p");
+        ele1.innerText = "Priya Sankar";
+
+        const ele2 = document.createElement("a");
+        ele2.setAttribute("target","_blank");
+        ele2.setAttribute("href", "https://getbootstrap.com/docs/5.0/getting-started/introduction/")
+        ele2.innerText = "click me!!!";
+
+        const parele = document.getElementById("Parent");
+        parele.append(ele, ele1, ele2);
+
+
+
+
+
+    </script>
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.container{
+    max-width: 300px;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+.form-grp{
+    margin: 10px;
+}
+.result{
+    font-weight: bold;
+    margin-top: 10px;
+}
+</style>
+<body>
+    <div class="container">
+        
+            <h1>Calculator!!!</h1>
+
+    <div class="form-grp">
+
+            <lable for = "num1" >Number 1 :</lable>
+            <input type="number" id="num1"/>
+    </div>
+        
+    <div class="form-grp">
+            <lable for = "num1" >Number 2 :</lable>
+            <input type="number" id="num2"/>
+    </div>
+    <div class="form-grp">
+            <button onclick="performCalculator('add')">Add</button>
+            <button onclick="performCalculator('sub')">sub</button>
+            <button onclick="performCalculator('mul')">mul</button>
+            <button onclick="performCalculator('div')">sub</button>
+
+    </div>
+    <div class="result">
+        Result:
+            <span id="result"> </span>
+    </div>
+    </div>
+    <script src="index.js"></script>
+    
+</body>
+</html>
