@@ -1,36 +1,42 @@
-  //Create a new XMLHttpRequest object
-  var xhr = new XMLHttpRequest();
+const apiUrl =  "https://restcountries.com/v3.1/all";
 
-  //Define HTTP method and URL
-  var method = "GET";
-  var url = "https://restcountries.com/v3.1/all";
+fetch(apiUrl)
+.then((response) => {
+ if(response.status === 200){
+    return response.json();
 
-  //Open the request
-  xhr.open(method, url);
+ }
+})
+.then((val) => {
+console.log(val);
+for (var i = 0; i < val.length; i++) {
+    if (val[i].name.common == "United States") {
+        console.log(val[i].flag);
+        console.log(val[i].capital);
+        console.log(val[i].region);
+        console.log(val[i].region);
 
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      //Request was successful
-      console.log(xhr.responseText);
-      var countriesDetails = JSON.parse(xhr.responseText);
-    for (var i = 0; i < countriesDetails.length; i++) {
-        // console.log(countriesDetails[i].name.common);
-        // console.log(countriesDetails[i].region);
-        // console.log(countriesDetails[i].subregion);
-        // console.log(countriesDetails[i].population);
-        if(countriesDetails[i].name.official('United States of America')){
-            document.getElementById('usa_Capital').innerHTML = countriesDetails[i];
+        const capitalValue = val[i].capital;
+        const capital = document.getElementById('usa_Capital');
+        capital.textContent = capitalValue;
 
-        }
-    
-        
+        const regionValue = val[i].region;
+        const region = document.getElementById('usa_Region');
+        region.textContent = regionValue;
+
+        const codeValue = val[i].idd.root;
+        const code = document.getElementById('usa_code');
+        code.textContent = codeValue;
+
+      var lat = -14.33333333;
+      var long = -170.0;
+      var urlWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=3f87b34e2050eefbd7043bb85eed6e4e`;
+
+
 
       }
-    } else {
-      //Request failed
-      console.log("Request failed", xhr.status);
     }
-  };
-
-  //send the request
-  xhr.send();
+  })
+  .catch((err) => {
+    console.log("Error: ", err);
+  });
